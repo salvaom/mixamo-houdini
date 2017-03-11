@@ -34,6 +34,8 @@ def run(output, characters, animations, names=None):
     animations = [os.path.join(animations, x)
                   for x in os.listdir(animations) if x.endswith('.fbx')]
 
+    return run_conversion(characters, animations, output)
+
 
 @requires_standalone
 def run_conversion(characters, animations, output):
@@ -127,7 +129,7 @@ def main(args=sys.argv[1:]):
     run(
         output=namespace.output,
         characters=namespace.characters,
-        animations=namespace.animations,
+        animations=namespace.anims,
         names=namespace.char_names
     )
 
